@@ -7,6 +7,8 @@ describe("staking_shii", () => {
   anchor.setProvider(anchor.AnchorProvider.env());
 
   const program = anchor.workspace.StakingShii as Program<StakingShii>;
+  const provider = anchor.getProvider();
+  const wallet = anchor.web3.workspace.StakingShii.provider.wallet as anchor.web3.Keypair;
 
   it("Is initialized!", async () => {
     // Add your test here.
