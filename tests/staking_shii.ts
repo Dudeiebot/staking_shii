@@ -10,9 +10,36 @@ describe("staking_shii", () => {
   const provider = anchor.getProvider();
   const wallet = anchor.web3.workspace.StakingShii.provider.wallet as anchor.web3.Keypair;
 
-  it("Is initialized!", async () => {
-    // Add your test here.
-    const tx = await program.methods.initialize().rpc();
-    console.log("Your transaction signature", tx);
+  let stakeInfoAccount = anchor.web3.PublicKey
+  let userInfoAccount = anchor.web3.PublicKey
+  let StakeInfoTokenAccount = anchor.web3.PublicKey
+  let mint = anchor.web3.PublicKey
+  let UserInfoTokenAccount = anchor.web3.PublicKey
+
+
+  before(async () => {
+   
+    userInfoAccount = anchor.web3.PublicKey.createProgramAddressSync(
+      [Buffer.from("USER"), provider.publicKey.toBuffer()],
+      program.programId
+    )
+
+    stakeInfoAccount = anchor.web3.PublicKey.createProgramAddressSync(
+      [Buffer.from("STAKE"), provider.publicKey.toBuffer(), mint.toBuffer()],
+      program.programId
+    )
+
+  })
+
+  it("Stake", async () => {
+   
+  });
+
+  it("Redeem", async () => {
+   
+  });
+
+  it("Unstake", async () => {
+   
   });
 });
