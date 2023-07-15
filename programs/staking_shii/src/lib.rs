@@ -33,8 +33,8 @@ pub mod staking_shii {
         //set the appropriate data fields for the data account
         ctx.accounts.stake_info.owner = ctx.accounts.owner.key();
         ctx.accounts.stake_info.mint = ctx.accounts.mint.key(); 
-        ctx.accounts.stake_info.start_timestamp = Clock::get().unwrap().unix_timestamp() as u64;
-        ctx.accounts.stake_info.last_redeem_timestamp = Clock::get().unwrap().unix_timestamp() as u64;
+        ctx.accounts.stake_info.start_timestamp = Clock::get().unwrap().unix_timestamp as u64;
+        ctx.accounts.stake_info.last_redeem_timestamp = Clock::get().unwrap().unix_timestamp as u64;
         ctx.accounts.stake_info.is_staked = true;
 
         ctx.accounts.user_info.stake_count = ctx.accounts.user_info.stake_count.checked_add(1).unwrap();
