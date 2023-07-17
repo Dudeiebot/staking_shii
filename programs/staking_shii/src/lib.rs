@@ -122,8 +122,8 @@ pub struct StakeInfo {
 
 #[account]
 pub struct UserInfo { //it all starts off at 0
-    owner: Pubkey,
-    points: u64,
-    stake_count: u16, //so be careful not to create a lot of data that you are not using because you pay per byte and you dont want have a lot of nft upto that, so therefore make the balance between keeping it low and also future proof
-    is_intialized: bool,
+    owner: Pubkey,//maybe we will use 32 bytes here
+    points: u64,//maybe we will use 8 bytes here 
+    stake_count: u16, //maybe we are using 2 bytes here, so be careful not to create a lot of data that you are not using because you pay per byte and you dont want have a lot of nft upto that, so therefore make the balance between keeping it low and also future proof
+    is_intialized: bool,//most importantly we are using 1 byte here.
 }
