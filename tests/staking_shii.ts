@@ -12,7 +12,7 @@ describe("staking_shii", () => {
   const wallet = anchor.workspace.StakingShii.provider.wallet as anchor.web3.Keypair;
 
   let mintAccount: anchor.web3.PublicKey
-  let userTokenAccount = anchor.web3.PublicKey
+  let userTokenAccount: anchor.web3.PublicKey
 
 
   let stakeInfoAccount: anchor.web3.PublicKey
